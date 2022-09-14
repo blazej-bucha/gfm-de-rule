@@ -2,7 +2,7 @@
 
 
 # This is a simple Linux bash script to compile the Fortran source codes of the
-# "GFM_DE_rule" package and to execute the compile binary.  "gfortran" must be
+# "GFM_DE_rule" package and to execute the compiled binary.  "gfortran" must be
 # installed on your machine.  To run the test computation in MATLAB, execute
 # the "./src/MATLAB/dTest_run.m" script in MATLAB.
 
