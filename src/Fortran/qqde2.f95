@@ -2,9 +2,10 @@ subroutine qqde2(a, b, delta, lat, lon, r, xi, cs, nmax, rb, r0, anm, bnm, s)
 !
 ! ==================================================================
 !
-! DESCRIPTION: This subroutine computes the integral from Eq. (29) of
-!              Fukushima (2017) via the double exponential rule. The 
-!              computation is performed in quadruple precision.
+! DESCRIPTION: This subroutine computes the integral from Eq. (29) of Fukushima
+!              (2017) (except for the "G * R_0^2 * rho_n" factor from that
+!              equation) via the double exponential rule. The computation is
+!              performed in double precision.
 !
 !              The subroutine is designed such that it can be used to
 !              compute the gravitational potential implied by a body defined
