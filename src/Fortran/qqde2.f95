@@ -142,7 +142,7 @@ subroutine qqde2(a, b, delta, lat, lon, r, xi, cs, nmax, rb, r0, anm, bnm, s)
     real(qp), intent(in) :: lat, lon, r, xi
     real(qp), intent(in) :: cs(nmax + 1, nmax + 1)
     real(qp), intent(in) :: rb, r0
-    real(dp), intent(in) :: anm(nmax + 1, nmax + 1), bnm(nmax + 1, nmax + 1)
+    real(qp), intent(in) :: anm(nmax + 1, nmax + 1), bnm(nmax + 1, nmax + 1)
 
     integer  :: MMAX, n, m
     real(qp) :: TWOPI, HALFPI, SAFETY, hmax, sdelta, factor

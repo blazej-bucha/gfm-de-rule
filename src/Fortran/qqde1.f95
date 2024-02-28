@@ -2,7 +2,7 @@ subroutine qqde1(a, b, delta, lat, lon, r, cs, nmax, rb, r0, anm, bnm, s)
 !
 ! ==================================================================
 !
-! DESCRIPTION: This subroutine computes one of the two integrals (depends on 
+! DESCRIPTION: This subroutine computes one of the two integrals (depends on
 !              the specified limits) from Eq. (28) of Fukushima (2017) via the
 !              double exponential rule. The computation is performed in
 !              quadruple precision.
@@ -138,7 +138,7 @@ subroutine qqde1(a, b, delta, lat, lon, r, cs, nmax, rb, r0, anm, bnm, s)
     real(qp), intent(in) :: lat, lon, r
     real(qp), intent(in) :: rb, r0
     real(qp), intent(in) :: cs(nmax + 1, nmax + 1)
-    real(dp), intent(in) :: anm(nmax + 1, nmax + 1), bnm(nmax + 1, nmax + 1)
+    real(qp), intent(in) :: anm(nmax + 1, nmax + 1), bnm(nmax + 1, nmax + 1)
 
     integer  :: MMAX, m
     real(qp) :: TWOPI, SAFETY, hmax, sdelta, factor
