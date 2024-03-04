@@ -3,8 +3,8 @@
 %
 % This script computes the gravitation potential of the Bennu asteroid.
 % The shape of the asteroid is given by a surface spherical harmonic
-% coefficients (in metres; the structure of the file is explained, for 
-% instance, in "./danm_bnm.f95")
+% coefficients (in metres; the structure of the file is explained, for
+% instance, in "./danm_bnm.f90")
 %
 % ../../data/Bennu_Shape_SHCs_to15.txt
 %
@@ -14,8 +14,8 @@
 %
 % ../../data/Bennu_Computing_points.txt
 %
-% The file contains three columns representing the spherical latitude, 
-% the spherical longitude (both in degrees) and the spherical radius 
+% The file contains three columns representing the spherical latitude,
+% the spherical longitude (both in degrees) and the spherical radius
 % (in metres) of the evaluation points.
 %
 % The loop over the evaluation points is paralellized using parfor. The
@@ -39,7 +39,7 @@ nmax = 15;  % Maximum harmonic degree of the surface spherical
             % harmonic expansion of the body's surface (must
             % correspond to the imported "cs" matrix, see below)
 
-rB = 0; % Radius (in metres) of a ball, the gravitational potential 
+rB = 0; % Radius (in metres) of a ball, the gravitational potential
         % of which will be subtracted from the output potential.
         % If "rb = 0", the gravitational field of the entire body
         % (as defined by its spherical harmonic coefficients) is computed.
@@ -48,7 +48,7 @@ G = 6.67384 * 10^(-11); % Newton's gravitational constant
 
 rho = 1260; % Constant mass density
 
-delta = 1e-16; % Relative error tolerance (see Fukushima 2017). For 
+delta = 1e-16; % Relative error tolerance (see Fukushima 2017). For
                % instance, "delta = 1e-16" ensures about 15- or
                % 16-digit accuracy of the output gravitational potential.
 % -------------------------------------------------------------------------
@@ -70,7 +70,7 @@ fprintf('Reading evaluation points...\n')
 
 points = load('../../data/Bennu_Computing_points.txt'); % Loads variables
                                                      %  "lat", "lon", "r"
-                                                     % with spherical 
+                                                     % with spherical
                                                      % latitudes (degrees),
                                                      % longitudes (degrees)
                                                      % and radii (metres)
@@ -106,7 +106,7 @@ bnm = anm;             % Initialization
 
 for n = 0:nmax
     for m = 0:(n - 1)
-        
+
         anm(n + 1, m + 1) = sqrt((2 * n + 1) * (2 * n -1) /...
                                  ((n + m) * (n - m)));
 
@@ -126,11 +126,11 @@ npoints = length(lat); % Total number of evaluation points
 V = zeros(npoints, 1); % Initialization
 
 parfor i = 1:npoints
-    
+
     lati = lat(i);
     loni = lon(i);
     ri = r(i);
-    
+
     vi1 = dqde1(-pi / 2 - lati, 0, delta, lati, loni, ri, ...
                 cs, nmax, rB, R0, anm, bnm);
     vi2 = dqde1(0, pi / 2 - lati, delta, lati, loni, ri, ...

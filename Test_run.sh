@@ -7,8 +7,8 @@
 # the "./src/MATLAB/dTest_run.m" script in MATLAB.
 
 
-# Set the "precision" variable to "d" for double precision computation or to 
-# "q" for quadruple precision computation. The rest of this script may not need 
+# Set the "precision" variable to "d" for double precision computation or to
+# "q" for quadruple precision computation. The rest of this script may not need
 # to be modified.
 precision="d"
 
@@ -22,17 +22,17 @@ echo "Starting the execution of the \"Test_run.sh\" script..."
 
 # Specify the Fortran files to be compiled
 echo "Reading the names of the Fortran files to be compiled"
-f_src="./src/Fortran/vartypes.f95
-       ./src/Fortran/constants.f95 
-       ./src/Fortran/${precision}anm_bnm.f95
-       ./src/Fortran/${precision}log1p.f95
-       ./src/Fortran/${precision}qde1.f95
-       ./src/Fortran/${precision}qde2.f95
-       ./src/Fortran/${precision}Test_run.f95"
+f_src="./src/Fortran/vartypes.f90
+       ./src/Fortran/constants.f90
+       ./src/Fortran/${precision}anm_bnm.f90
+       ./src/Fortran/${precision}log1p.f90
+       ./src/Fortran/${precision}qde1.f90
+       ./src/Fortran/${precision}qde2.f90
+       ./src/Fortran/${precision}Test_run.f90"
 
 
-# Specify the name of the executable file to be compiled. The file will be 
-# saved in the "./bin" folder, which will be automatically created if it does 
+# Specify the name of the executable file to be compiled. The file will be
+# saved in the "./bin" folder, which will be automatically created if it does
 # not exist.
 echo "Reading the name of the executable file..."
 f_bin=${precision}Test_run

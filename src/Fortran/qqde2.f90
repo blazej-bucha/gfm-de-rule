@@ -34,7 +34,7 @@ subroutine qqde2(a, b, delta, lat, lon, r, xi, cs, nmax, rb, r0, anm, bnm, s)
 !                    a scalar.
 !
 !         "xi"    -- Temporary latitude (dummy integration variable) in radians
-!                    resulting from the "qqde1.f95" subroutine.
+!                    resulting from the "qqde1.f90" subroutine.
 !
 !         "cs"    -- Matrix of dimensions (nmax + 1, nnmax + 1) with
 !                    the input spherical harmonic coefficients defining the

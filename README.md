@@ -29,7 +29,7 @@ accuracy, the longer the computation times can be expected.
   * The `./data/Bennu_Shape_SHCs_to15.txt` file contains spherical harmonic
     coefficients defining the shape of the 101955 Bennu asteroid up to degree
     `15`. For details on the structure of the file, see, e.g., the
-    `./src/Fortran/danm_bnm.f95` subroutine. The development of these
+    `./src/Fortran/danm_bnm.f90` subroutine. The development of these
     coefficients is described in the documentation (see the `./docs` folder).
 
   * `./data/Bennu_Computing_points.txt` specifies three points, at which the
@@ -65,11 +65,11 @@ with the Fortran and MATLAB code.
 ### Linux
 
 Execute the bash script `./Test_run.sh`. It compiles the test program
-`./src/Fortran/dTest_run.f95` (double precision) with GNU Fortran and then
+`./src/Fortran/dTest_run.f90` (double precision) with GNU Fortran and then
 executes the compiled binary.
 
 To run the test computation in quadruple precision
-(`./src/Fortran/qTest_run.f95`), set the variable `precision` in
+(`./src/Fortran/qTest_run.f90`), set the variable `precision` in
 `./Test_run.sh` to `q` and execute the bash script `./Test_run.sh`.
 
 By default, `./Test_run.sh` compiles the code without the flag enabling
